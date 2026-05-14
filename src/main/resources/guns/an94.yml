@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────
+# CombatGunSSS – Individual gun configuration
+# Edit any field and run /gun reload in-game to apply changes.
+#
+# Fields reference:
+#   name                     Display name
+#   category                 assault_rifles | smgs | snipers | shotguns | pistols | melee
+#   ammo_type                ar_ammo | smg_ammo | sniper_ammo | sg_ammo | hg_ammo | none
+#   damage                   Base HP removed per hit (before headshot / falloff)
+#   fire_rate                Rounds per second  (cooldown = 1000 / fire_rate ms)
+#   magazine_size            Rounds per magazine
+#   reload_time              Seconds to complete a reload
+#   headshot_multiplier      Damage multiplier on head hits
+#   range                    Max ray-trace distance in blocks
+#   block_penetration        Total penetration budget through soft blocks
+#   entity_penetration       Extra entities the bullet can pass through
+#   projectiles_per_shot     Pellets per trigger pull (shotguns > 1)
+#   projectile_damage_mult   Per-pellet damage fraction  (1.0 for single projectile)
+#   burst_count              Rounds per trigger pull (1 = semi / full-auto)
+#   burst_interval_ticks     Server ticks between burst rounds
+#   damage_falloff_start     Block distance at which damage begins to drop
+#   min_damage_multiplier    Floor multiplier at max range (0.0-1.0)
+#   movement_spread_mult     Spread multiplier while sprinting / in the air
+#   rarity                   common | rare | epic | legendary
+#   sound                    Bukkit Sound enum name played on shoot
+#   custom_model_data        Resource-pack model data integer (0 = none)
+#   recoil.pitch             Camera pitch kick per shot
+#   recoil.yaw               Random yaw kick magnitude
+#   recoil.spread            Random bullet spread radius
+#   recoil.recovery          Reserved (not yet used by engine)
+#   recipe.station           Station required to craft  (mechanical_crafting_table)
+#   recipe.ingredients       ingredient_id: amount pairs
+# ─────────────────────────────────────────────────────────────
+
+name: AN94
+category: assault_rifles
+ammo_type: ar_ammo
+rarity: rare
+damage: 12
+fire_rate: 10.7
+magazine_size: 30
+reload_time: 2.4
+headshot_multiplier: 1.8
+sound: ENTITY_FIREWORK_ROCKET_BLAST
+custom_model_data: 21002
+recoil:
+  pitch: 1.2
+  yaw: 0.32
+  spread: 0.2
+  recovery: 0.84
+recipe:
+  station: mechanical_crafting_table
+  ingredients:
+    steel_ingot: 12
+    iron_ingot: 10
+    rifle_receiver: 1
+    rifle_barrel: 1
+    tactical_stock: 1
+    burst_gear: 1
+    weapon_parts: 7

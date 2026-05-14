@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────
+# CombatGunSSS – Individual gun configuration
+# Edit any field and run /gun reload in-game to apply changes.
+#
+# Fields reference:
+#   name                     Display name
+#   category                 assault_rifles | smgs | snipers | shotguns | pistols | melee
+#   ammo_type                ar_ammo | smg_ammo | sniper_ammo | sg_ammo | hg_ammo | none
+#   damage                   Base HP removed per hit (before headshot / falloff)
+#   fire_rate                Rounds per second  (cooldown = 1000 / fire_rate ms)
+#   magazine_size            Rounds per magazine
+#   reload_time              Seconds to complete a reload
+#   headshot_multiplier      Damage multiplier on head hits
+#   range                    Max ray-trace distance in blocks
+#   block_penetration        Total penetration budget through soft blocks
+#   entity_penetration       Extra entities the bullet can pass through
+#   projectiles_per_shot     Pellets per trigger pull (shotguns > 1)
+#   projectile_damage_mult   Per-pellet damage fraction  (1.0 for single projectile)
+#   burst_count              Rounds per trigger pull (1 = semi / full-auto)
+#   burst_interval_ticks     Server ticks between burst rounds
+#   damage_falloff_start     Block distance at which damage begins to drop
+#   min_damage_multiplier    Floor multiplier at max range (0.0-1.0)
+#   movement_spread_mult     Spread multiplier while sprinting / in the air
+#   rarity                   common | rare | epic | legendary
+#   sound                    Bukkit Sound enum name played on shoot
+#   custom_model_data        Resource-pack model data integer (0 = none)
+#   recoil.pitch             Camera pitch kick per shot
+#   recoil.yaw               Random yaw kick magnitude
+#   recoil.spread            Random bullet spread radius
+#   recoil.recovery          Reserved (not yet used by engine)
+#   recipe.station           Station required to craft  (mechanical_crafting_table)
+#   recipe.ingredients       ingredient_id: amount pairs
+# ─────────────────────────────────────────────────────────────
+
+name: M1873
+category: pistols
+ammo_type: sg_ammo
+rarity: rare
+damage: 5
+fire_rate: 1.2
+magazine_size: 2
+reload_time: 2.1
+headshot_multiplier: 1.45
+sound: ENTITY_GENERIC_EXPLODE
+custom_model_data: 25003
+recoil:
+  pitch: 2.4
+  yaw: 0.34
+  spread: 0.62
+  recovery: 0.66
+recipe:
+  station: mechanical_crafting_table
+  ingredients:
+    steel_ingot: 8
+    iron_ingot: 4
+    pistol_receiver: 1
+    sawn_off_dual_barrel: 1
+    grip_handle: 1
+    break_action_kit: 1
+    weapon_parts: 4

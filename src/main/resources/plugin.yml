@@ -1,0 +1,31 @@
+name: CombatGunSSS
+version: 2.0.6
+main: dev.duong2012g.combatgun.CombatGunSSSPlugin
+api-version: '1.21'
+author: Duong2012G
+description: >
+  High-performance gun plugin for Paper 1.21+. 45 weapons, hitscan combat,
+  ADS, ammo pouches, bleeding DoT, multi-language i18n, persistent HUD,
+  WorldGuard regions, Vault shop, PlaceholderAPI, and anti-cheat exemptions.
+
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - WorldGuard
+  - Vulcan
+  - Matrix
+
+commands:
+  gun:
+    description: CombatGunSSS admin and utility commands (v2.0.6)
+    usage: /gun <give|giveammo|givepart|station|list|reload|recipe|inspect|book|buy|givepouch|statsreset|seasonreset> [args...]
+    aliases: [cg, combatgun]
+    permission: combatgun.admin
+
+permissions:
+  combatgun.admin:
+    description: Access to all /gun admin commands
+    default: op
+  combatgun.use:
+    description: Ability to shoot, reload, and use guns
+    default: true

@@ -1,0 +1,311 @@
+# ── Config Version ────────────────────────────────────────────────────────────
+# Do not edit this value. It is used by the plugin to detect outdated configs.
+config-version: 2
+
+combatgun:
+  stations:
+    mechanical_crafting_table:
+      display_name: Mechanical Crafting Table
+      item_id: mechanical_crafting_table
+      craft_source: vanilla_crafting_table
+      recipe:
+        ingredients:
+          crafting_table: 1
+          iron_ingot: 2
+          steel_ingot: 1
+          redstone: 2
+          observer: 1
+          piston: 1
+          smooth_stone: 1
+
+  ammo_types:
+    ar_ammo:
+      display_name: AR Ammo
+      output: 30
+      recipe:
+        station: mechanical_crafting_table
+        ingredients:
+          brass_casing: 30
+          gunpowder: 15
+          steel_scrap: 10
+          primer_cap: 30
+
+    smg_ammo:
+      display_name: SMG Ammo
+      output: 45
+      recipe:
+        station: mechanical_crafting_table
+        ingredients:
+          brass_casing: 45
+          gunpowder: 12
+          steel_scrap: 8
+          primer_cap: 45
+
+    sniper_ammo:
+      display_name: Sniper Ammo
+      output: 10
+      recipe:
+        station: mechanical_crafting_table
+        ingredients:
+          brass_casing: 10
+          gunpowder: 12
+          tungsten_core: 5
+          primer_cap: 10
+
+    sg_ammo:
+      display_name: SG Ammo
+      output: 12
+      recipe:
+        station: mechanical_crafting_table
+        ingredients:
+          shotgun_shell: 12
+          gunpowder: 8
+          lead_pellet: 36
+          primer_cap: 12
+
+    hg_ammo:
+      display_name: HG Ammo
+      output: 24
+      recipe:
+        station: mechanical_crafting_table
+        ingredients:
+          brass_casing: 24
+          gunpowder: 8
+          steel_scrap: 6
+          primer_cap: 24
+
+# Individual weapon configs live in the guns/ folder.
+# Each gun has its own YAML file, e.g. guns/ak47.yml
+# Run /gun reload in-game to apply changes without restarting.
+
+  worlds:
+    # blacklist = ban worlds in the list
+    # whitelist = only allow worlds in the list
+    mode: blacklist
+    list: []
+    # list:
+    #   - world_nether
+    #   - world_the_end
+
+  mob_drops:
+    enabled: true
+    chance: 0.04         # 4% per mob kill
+    drops:
+      - type: ar_ammo
+        amount: 5
+        weight: 40
+      - type: smg_ammo
+        amount: 5
+        weight: 30
+      - type: hg_ammo
+        amount: 6
+        weight: 25
+      - type: sg_ammo
+        amount: 4
+        weight: 15
+      - type: sniper_ammo
+        amount: 2
+        weight: 10
+
+  # ── Friendly fire ────────────────────────────────────────────────────────
+  # Set to false to prevent players on the same team from shooting each other.
+  friendly_fire: true
+
+  # How teams are determined when friendly_fire is false.
+  #   scoreboard       — uses vanilla Minecraft scoreboard teams (/team add ...)
+  #   permission_group — players sharing any combatgun.team.<n> permission are teammates
+  #   none             — friendly fire is always enabled regardless of the setting above
+  team_provider: scoreboard
+
+  # ── Auto-reload ──────────────────────────────────────────────────────────
+  # When true, automatically starts reloading after a gun fires its last round.
+  # Set to false for hardcore / manual-reload server modes.
+  auto_reload_when_empty: true
+
+  # ── HUD ──────────────────────────────────────────────────────────────────
+  # Persistent action-bar showing gun name, visual ammo bar, current/max ammo,
+  # and reserve ammo while holding a gun.
+  #
+  # Example: 🔫 AK47  ▐████████████░░░░▌  22 / 30  •  90
+  hud:
+    enabled: true
+    update_interval_ticks: 5   # how often to refresh (ticks). Min 1.
+
+  # ── WorldGuard ───────────────────────────────────────────────────────────
+  # Requires WorldGuard to be installed (soft-depend).
+  # When active, shooting is blocked in regions with:
+  #   /rg flag <region> gun-shooting deny
+  # Falls back to checking the built-in PVP flag if gun-shooting is not set.
+  # No config needed here — everything is controlled via WorldGuard region flags.
+
+  # ── Shop (Vault) ─────────────────────────────────────────────────────────
+  # Requires Vault + an economy plugin (e.g. EssentialsX, CMI).
+  # Players run: /gun buy <gun_id>
+  # Admins can give for free: /gun buy <gun_id> free
+  shop:
+    enabled: false              # set to true to activate the shop
+    currency_symbol: "$"        # shown in chat messages only (cosmetic)
+    # Price list — add any gun/melee ID here with its price.
+    # Guns not listed here cannot be purchased via /gun buy.
+    guns:
+      # Pistols (cheap)
+      g18:          150.0
+      usp:          200.0
+      desert_eagle: 350.0
+      m1873:        180.0
+      m1917:        180.0
+      m500:         300.0
+      # SMGs
+      mp5:          400.0
+      p90:          500.0
+      ump:          420.0
+      mac10:        380.0
+      bizon:        450.0
+      thompson:     480.0
+      mp40:         460.0
+      vector:       550.0
+      cg15:         520.0
+      vss:          600.0
+      # Assault Rifles
+      ak47:         700.0
+      m4a1:         750.0
+      scar:         800.0
+      aug:          780.0
+      famas:        720.0
+      g36:          740.0
+      groza:        820.0
+      an94:         850.0
+      m14:          700.0
+      parafal:      760.0
+      xm8:          830.0
+      kingfisher:   880.0
+      # Shotguns
+      m1014:        500.0
+      spas12:       550.0
+      mag7:         520.0
+      m1887:        480.0
+      m590:         490.0
+      trogon:       600.0
+      # Snipers (expensive)
+      kar98k:      1000.0
+      m24:         1100.0
+      awm:         2500.0
+      m82b:        2000.0
+      m107:        2200.0
+      vsk94:       1500.0
+      # Melee
+      knife:        100.0
+      bat:          120.0
+      pan:          200.0
+      parang:       250.0
+      katana:       500.0
+      scythe:       800.0
+
+  # ── Anti-cheat ────────────────────────────────────────────────────────────
+  # Exempts players from anti-cheat checks for a short window after shooting.
+  # Prevents Vulcan / Matrix from flagging recoil camera movement or knockback velocity.
+  # Supported: Vulcan, Matrix (auto-detected from server plugins).
+  anticheat:
+    exempt_ticks: 3             # how many ticks the exemption lasts after each shot
+
+
+
+  # ── Attachments ───────────────────────────────────────────────────────────
+  # Define attachment items here. Apply via: /gun attach <id>
+  # Remove via: /gun detach <TYPE>   (types: SILENCER, SCOPE, EXTENDED_MAG, GRIP)
+  attachments:
+    silencer:
+      type: SILENCER
+      display_name: "Silencer"
+      sound_radius_multiplier: 0.3    # 70% quieter shot
+      damage_multiplier: 0.92         # -8% damage tradeoff
+      custom_model_data: 7001
+
+    extended_mag_ar:
+      type: EXTENDED_MAG
+      display_name: "Extended AR Mag"
+      magazine_bonus: 15              # +15 rounds
+      custom_model_data: 7002
+
+    extended_mag_smg:
+      type: EXTENDED_MAG
+      display_name: "Extended SMG Mag"
+      magazine_bonus: 20
+      custom_model_data: 7003
+
+    tactical_grip:
+      type: GRIP
+      display_name: "Tactical Grip"
+      recoil_pitch_multiplier: 0.65   # 35% less pitch recoil
+      spread_multiplier: 0.75         # 25% tighter spread
+      custom_model_data: 7004
+
+    acog_scope:
+      type: SCOPE
+      display_name: "ACOG Scope"
+      custom_model_data: 7005
+
+  # ── Throwables ────────────────────────────────────────────────────────────
+  # Give via: /gun givethrowable <id> [player]
+  throwables:
+    frag_grenade:
+      type: FRAG
+      display_name: "Frag Grenade"
+      fuse_ticks: 60                  # 3 seconds (20 ticks/s)
+      explosion_radius: 5.0
+      explosion_damage: 8.0
+      custom_model_data: 9001
+
+    smoke_grenade:
+      type: SMOKE
+      display_name: "Smoke Grenade"
+      fuse_ticks: 20                  # 1 second
+      duration_ticks: 200             # 10 second smoke cloud
+      cloud_radius: 4.0
+      custom_model_data: 9002
+
+    flashbang:
+      type: FLASHBANG
+      display_name: "Flashbang"
+      fuse_ticks: 20
+      effect_radius: 6.0
+      blind_ticks: 100                # 5 seconds blind
+      deaf_ticks: 60                  # 3 seconds "deaf"
+      custom_model_data: 9003
+
+  # ── Language (i18n) ──────────────────────────────────────────────────────
+  # Language code matching a file in lang/<code>.yml
+  # Bundled: en (English), vi (Tiếng Việt)
+  # Add your own lang/xx.yml to the plugin data folder for custom translations.
+  language: en
+
+  # ── Bleeding ──────────────────────────────────────────────────────────────
+  # When a bullet hits a player there is a chance to apply a bleed DoT effect.
+  # The affected player loses HP each second until the duration ends or they
+  # use the cure item (default: bandage component).
+  bleeding:
+    enabled: false              # set true to activate
+    chance: 0.15                # 15% chance per bullet hit on a player
+    damage_per_second: 1.0      # HP lost per second while bleeding
+    duration_seconds: 10        # total bleed duration
+    cure_item: bandage           # component ID that cures bleeding (set "" to disable)
+
+  # ── Ammo Pouch ────────────────────────────────────────────────────────────
+  # Compressed ammo container. Shift+Right-click to unpack into inventory.
+  # Create via: /gun givepouch <ammo_id> <amount> [player]
+  ammo_pouch:
+    enabled: true
+    material: BUNDLE            # Bukkit Material for the pouch item
+    custom_model_data: 8001     # 0 = no custom model
+
+  # ── Effects ──────────────────────────────────────────────────────────────
+  effects:
+    bullet_trail: true
+    muzzle_flash: true
+    hit_particles: true
+    block_impact: true
+    headshot_particles: true
+    gun_sound: true
+    melee_sound: true
+    melee_particles: true
+    sound_volume: 1.5           # master volume (0.0 – 2.0)

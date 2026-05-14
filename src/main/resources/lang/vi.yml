@@ -1,0 +1,55 @@
+# CombatGunSSS — Tiếng Việt
+# Mã màu dùng tiền tố § (§a = xanh lá, §c = đỏ, §e = vàng, §f = trắng, §7 = xám)
+# {0}, {1} … được thay thế bằng giá trị thực tế lúc chạy.
+
+gun:
+  disabled_world:    "⛔ Súng bị tắt trong thế giới này."
+  disabled_region:   "⛔ Súng bị tắt trong khu vực này."
+  no_permission:     "⛔ Bạn không có quyền sử dụng {0}."
+  broken:            "🔧 {0} đã hỏng! Chế tạo hoặc sửa chữa nó."
+  reloading:         "Đang nạp đạn…"
+  empty:             "❌ Hết đạn! Nhấn [F] để nạp đạn."
+  durability_broken: "⚠ {0} đã hỏng hoàn toàn!"
+  durability_low:    "⚠ Độ bền nguy hiểm: {0}/{1}"
+  melee_cooldown:    "⚔ Hồi chiêu: {0}s"
+  melee_hit:         "⚔ Đánh trúng {0}! (-{1} HP)"
+  headshot:          "☠ HEADSHOT! -{0} HP"
+  reload_cancelled:  "Đã huỷ nạp đạn."
+  reload_full:       "Băng đạn đã đầy!"
+  reload_no_ammo:    "Không có {0} trong túi đồ."
+  reload_failed:     "Nạp đạn thất bại: không còn đạn."
+  reload_done:       "✔ Đã nạp! [{0}/{1}]  -{2} {3}"
+  auto_reloading:    "Hết đạn — tự động nạp…"
+
+ads:
+  enter:  "🎯 ADS  [độ giật ×{0}]"
+  exit:   "🎯 Tắt ADS"
+
+scope:
+  enter:  "🔭 NGẮM  [độ giật ×0.05]"
+
+shop:
+  not_available:    "§cCửa hàng chưa được bật trên server này."
+  not_for_sale:     "§c{0} không có trong danh sách bán."
+  insufficient:     "§cKhông đủ tiền. §7Cần §f{0}{1} §7, bạn đang có §f{0}{2}§7."
+  tx_failed:        "§cGiao dịch thất bại: {0}"
+  item_error:       "§cKhông tạo được vũ khí. Tiền đã được hoàn trả."
+  success:          "§a✔ Đã mua §f{0} §avới giá §f{1}{2}§a! §7(Số dư: {1}{3})"
+  admin_free:       "§aAdmin: cho {0} miễn phí."
+  not_player:       "Lệnh này chỉ dùng được trong game."
+  no_perm:          "Bạn không có quyền mua súng."
+  usage:            "Cách dùng: /gun buy <id_súng>"
+
+bleeding:
+  applied:   "🩸 Bạn đang chảy máu! Dùng băng để cầm máu."
+  tick:      "🩸 Đang chảy máu…"
+  cured:     "§a✔ Đã cầm máu."
+
+ammo_pouch:
+  empty:     "§7Túi đạn đang rỗng."
+  unpacked:  "§a✔ Đã lấy ra {0}× {1} từ túi đạn."
+  full_inv:  "§cTúi đồ đầy — không lấy hết đạn được."
+  label:     "Túi {0}"
+  lore_type: "Loại đạn: {0}"
+  lore_qty:  "Số lượng: {0} viên"
+  lore_use:  "Shift+Chuột phải để lấy đạn ra"

@@ -1,0 +1,55 @@
+# CombatGunSSS — English language file
+# Colour codes use § prefix (§a = green, §c = red, §e = yellow, §f = white, §7 = grey)
+# {0}, {1} … are replaced with context-specific values at runtime.
+
+gun:
+  disabled_world:    "⛔ Guns are disabled in this world."
+  disabled_region:   "⛔ Guns are disabled in this region."
+  no_permission:     "⛔ You don't have permission to use {0}."
+  broken:            "🔧 {0} is broken! Craft a new one or repair it."
+  reloading:         "Reloading…"
+  empty:             "❌ Empty! Press [F] to reload."
+  durability_broken: "⚠ {0} is now broken!"
+  durability_low:    "⚠ Durability critical: {0}/{1}"
+  melee_cooldown:    "⚔ Cooldown: {0}s"
+  melee_hit:         "⚔ {0} hit! (-{1} HP)"
+  headshot:          "☠ HEADSHOT! -{0} HP"
+  reload_cancelled:  "Reload cancelled."
+  reload_full:       "Magazine is already full!"
+  reload_no_ammo:    "No {0} in inventory."
+  reload_failed:     "Reload failed: no ammo left."
+  reload_done:       "✔ Reloaded! [{0}/{1}]  -{2} {3}"
+  auto_reloading:    "Empty — auto reloading…"
+
+ads:
+  enter:  "🎯 ADS  [spread ×{0}]"
+  exit:   "🎯 ADS off"
+
+scope:
+  enter:  "🔭 SCOPED  [spread ×0.05]"
+
+shop:
+  not_available:    "§cShop is not available on this server."
+  not_for_sale:     "§c{0} is not available for purchase."
+  insufficient:     "§cInsufficient funds. §7Need §f{0}{1} §7, you have §f{0}{2}§7."
+  tx_failed:        "§cTransaction failed: {0}"
+  item_error:       "§cFailed to create gun item. Your money has been refunded."
+  success:          "§a✔ Purchased §f{0} §afor §f{1}{2}§a! §7(Balance: {1}{3})"
+  admin_free:       "§aAdmin: gave {0} for free."
+  not_player:       "This command can only be used by players."
+  no_perm:          "You don't have permission to buy guns."
+  usage:            "Usage: /gun buy <gun_id>"
+
+bleeding:
+  applied:   "🩸 You are bleeding! Use a bandage to stop it."
+  tick:      "🩸 Bleeding…"
+  cured:     "§a✔ Bleeding stopped."
+
+ammo_pouch:
+  empty:     "§7Ammo pouch is empty."
+  unpacked:  "§a✔ Unpacked {0}× {1} from pouch."
+  full_inv:  "§cInventory full — could not unpack all ammo."
+  label:     "{0} Pouch"
+  lore_type: "Ammo type: {0}"
+  lore_qty:  "Quantity: {0} rounds"
+  lore_use:  "Shift+Right-click to unpack"
